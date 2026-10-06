@@ -1,0 +1,9 @@
+=== Welcome to Gadget Central ===
+Item Purchased: Wireless Earbuds
+Quantity: 5 (Packed in 2 full boxes, 1 left over)
+Unit Price: $49.99
+Subtotal: $249.95
+Tax (12%): $29.99
+Total Amount Due;  $279.94
+Qualifies for Free Shipping? true
+VIP Discount Applied? true
