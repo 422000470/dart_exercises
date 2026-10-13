@@ -1,0 +1,50 @@
+// 3. WRITE A FUNCTION: Takes list of item prices and VIP status parameter, returns total
+double calculateCartTotal(List<dynamic> itemPrices, bool isVip) {
+  double subtotal = 0.0;
+
+  // 2. WRITE A LOOP: Iterates through each item in the cart
+  for (int i = 0; i < itemPrices.length; i++) {
+    // 4. ADD ERROR HANDLING: Try/catch block handles bad data gracefully
+    try {
+      final double price = itemPrices[i] as double;
+
+      // 1 & 5. COMBINE PIECES: Conditional logic inside the loop inside the function
+      if (price > 100.0) {
+        print('Item #${i + 1} (\$${price.toStringAsFixed(2)}): High-value item flagged.');
+      } else {
+        print('Item #${i + 1} (\$${price.toStringAsFixed(2)}): Regular item processed.');
+      }
+
+      subtotal += price;
+    } catch (e) {
+      // 6. TEST WITH BAD INPUT HANDLER: Catches invalid data type errors
+      print('[ERROR] Could not process item at index $i ("${itemPrices[i]}"): Invalid price input.');
+    }
+  }
+
+  // Apply optional VIP discount using a conditional
+  final double discountRate = isVip ? 0.10 : 0.0;
+  final double finalTotal = subtotal * (1.0 - discountRate);
+
+  return finalTotal;
+}
+
+void main() {
+  // 1. Variable Declarations
+  final String storeName = 'Gadget Central';
+  final bool isVipMember = true;
+
+  print('=== Welcome to $storeName ===\n');
+
+  // 6. TEST WITH BAD INPUT: Cart contains double values alongside invalid inputs ("invalid_price" and null)
+  final List<dynamic> cartItems = [49.99, 120.00, 'invalid_price', 25.50, null, 15.00];
+
+  print('--- Processing Cart Items ---');
+
+  // Calling the function and saving the returned value
+  final double finalAmount = calculateCartTotal(cartItems, isVipMember);
+
+  print('\n--- Final Receipt ---');
+  print('VIP Member: $isVipMember');
+  print('Total Amount Due: \$${finalAmount.toStringAsFixed(2)}');
+}
