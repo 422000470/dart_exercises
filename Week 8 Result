@@ -1,0 +1,13 @@
+=== Welcome to Gadget Central ===
+
+--- Processing Cart Items ---
+Item #1 ($49.99): Regular item processed.
+Item #2 ($120.00): High-value item flagged.
+[ERROR] Could not process item at index 2 ("invalid_price"): Invalid price input.
+Item #4 ($25.50): Regular item processed.
+[ERROR] Could not process item at index 4 ("null"): Invalid price input.
+Item #6 ($15.00): Regular item processed.
+
+--- Final Receipt ---
+VIP Member: true
+Total Amount Due: $189.44
